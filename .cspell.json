@@ -56,18 +56,12 @@
   "languageSettings": [
     {
       "languageId": "dockerfile",
-      "ignoreRegExpList": [
-        "^FROM .*?\\s"
-      ]
+      "ignoreRegExpList": ["^FROM .*?\\s"]
     },
     {
       "languageId": "markdown",
-      "dictionaries": [
-        "latex"
-      ],
-      "ignoreRegExpList": [
-        "/^```(?:.|\\s)+?^```/mig"
-      ]
+      "dictionaries": ["latex"],
+      "ignoreRegExpList": ["/^```(?:.|\\s)+?^```/mig"]
     }
   ],
   "overrides": [
@@ -85,11 +79,7 @@
     },
     {
       "filename": "**/*.py",
-      "ignoreRegExpList": [
-        "author(_email)?=.*$",
-        "linewidth",
-        "maintainer(_email)?=.*$"
-      ]
+      "ignoreRegExpList": ["author(_email)?=.*$", "linewidth", "maintainer(_email)?=.*$"]
     },
     {
       "filename": "**/*.rst",
@@ -145,82 +135,47 @@
     },
     {
       "filename": "**/*.toml",
-      "ignoreRegExpList": [
-        "authors = .*?$",
-        "maintainers = .*?$"
-      ]
+      "ignoreRegExpList": ["authors = .*?$", "maintainers = .*?$"]
     },
     {
       "filename": "**/*.txt",
-      "ignoreRegExpList": [
-        "download\\(.+\\)"
-      ]
+      "ignoreRegExpList": ["download\\(.+\\)"]
     },
     {
       "filename": "**/*.xosc",
-      "ignoreRegExpList": [
-        "author=\".*?\""
-      ]
+      "ignoreRegExpList": ["author=\".*?\""]
     },
     {
       "filename": "**/*.yaml",
-      "ignoreRegExpList": [
-        "author: .+$",
-        "git_email: .+$",
-        "git_user: .+$",
-        "uses: .+$"
-      ]
+      "ignoreRegExpList": ["author: .+$", "git_email: .+$", "git_user: .+$", "uses: .+$"]
     },
     {
       "filename": "**/cyclonedds.xml(.jinja2)?",
-      "ignoreRegExpList": [
-        "DontRoute"
-      ]
+      "ignoreRegExpList": ["DontRoute"]
     },
     {
       "filename": "**/galaxy.yml",
-      "ignoreRegExpList": [
-        "- .+ <.+@.+>"
-      ]
+      "ignoreRegExpList": ["- .+ <.+@.+>"]
     },
     {
       "filename": "**/package.json",
-      "ignoreRegExpList": [
-        "\".*\": \".*[0-9]+\\.[0-9]+\\.[0-9]+.*\"",
-        "\"author\": .*"
-      ]
+      "ignoreRegExpList": ["\".*\": \".*[0-9]+\\.[0-9]+\\.[0-9]+.*\"", "\"author\": .*"]
     },
     {
       "filename": "**/package.xml",
-      "ignoreRegExpList": [
-        "<author.*?</author>",
-        "<maintainer.*?</maintainer>"
-      ]
+      "ignoreRegExpList": ["<author.*?</author>", "<maintainer.*?</maintainer>"]
     },
     {
       "filename": "**/sync-files.yaml",
-      "ignoreRegExpList": [
-        "dest: .*",
-        "repository: .*",
-        "source: .*"
-      ]
+      "ignoreRegExpList": ["dest: .*", "repository: .*", "source: .*"]
     },
     {
       "filename": "**/{*.cpp,*.hpp,*.py,*.sh,*.xml,*.yaml,CMakeLists.txt}",
-      "ignoreRegExpList": [
-        "Copyright (\\(c\\))?.+$",
-        "FIXME( )?\\(.+?\\)",
-        "TODO( )?\\(.+?\\)"
-      ]
+      "ignoreRegExpList": ["Copyright (\\(c\\))?.+$", "FIXME( )?\\(.+?\\)", "TODO( )?\\(.+?\\)"]
     },
     {
       "filename": "**/{*.cpp,*.hpp}",
-      "ignoreRegExpList": [
-        "@author .*$",
-        "[\\@]tparam",
-        "\\author .*$",
-        "Author(s)?( )?: .*$"
-      ]
+      "ignoreRegExpList": ["@author .*$", "[\\@]tparam", "\\author .*$", "Author(s)?( )?: .*$"]
     },
     {
       "filename": "**/{*.drawio,*.svg}",
@@ -240,23 +195,10 @@
     },
     {
       "filename": "**/{*.js,*.ts}",
-      "ignoreRegExpList": [
-        "owner: .*$",
-        "repo:: .*$"
-      ]
+      "ignoreRegExpList": ["owner: .*$", "repo:: .*$"]
     }
   ],
-  "flagWords": [
-    "Github",
-    "JIRA",
-    "planing",
-    "ROS1",
-    "ROS2",
-    "Tier4",
-    "TIERIV",
-    "TierIV",
-    "VSCode"
-  ],
+  "flagWords": ["Github", "JIRA", "planing", "ROS1", "ROS2", "Tier4", "TIERIV", "TierIV", "VSCode"],
   "words": [
     "aabb",
     "aarch",
