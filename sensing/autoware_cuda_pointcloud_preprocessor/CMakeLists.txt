@@ -36,6 +36,8 @@ include_directories(
 
 list(APPEND CUDA_NVCC_FLAGS "--expt-relaxed-constexpr -diag-suppress 20012") # cSpell: ignore expt
 
+################################################################################
+### cuda_pointcloud_preprocessor ###
 cuda_add_library(cuda_pointcloud_preprocessor_lib SHARED
   src/cuda_pointcloud_preprocessor/cuda_pointcloud_preprocessor.cu
   src/cuda_pointcloud_preprocessor/common_kernels.cu
@@ -78,6 +80,38 @@ rclcpp_components_register_node(cuda_pointcloud_preprocessor
   EXECUTABLE cuda_pointcloud_preprocessor_node
 )
 
+################################################################################
+### cuda_downsample_filter ###
+cuda_add_library(cuda_voxel_grid_downsample_filter_lib SHARED
+  src/cuda_downsample_filter/cuda_voxel_grid_downsample_filter.cu
+)
+
+target_include_directories(cuda_voxel_grid_downsample_filter_lib SYSTEM PRIVATE
+  ${cuda_blackboard_INCLUDE_DIRS}
+  ${sensor_msgs_INCLUDE_DIRS}
+)
+
+# Targets
+ament_auto_add_library(cuda_voxel_grid_downsample_filter SHARED
+  src/cuda_downsample_filter/cuda_voxel_grid_downsample_filter_node.cpp
+)
+
+ament_target_dependencies (cuda_voxel_grid_downsample_filter # XXX: DEBUG
+  pcl_conversions
+)
+
+target_link_libraries(cuda_voxel_grid_downsample_filter
+  ${CUDA_LIBRARIES}
+  cuda_voxel_grid_downsample_filter_lib
+)
+
+rclcpp_components_register_node(cuda_voxel_grid_downsample_filter
+  PLUGIN "autoware::cuda_downsample_filter::CudaVoxelGridDownsampleFilterNode"
+  EXECUTABLE cuda_voxel_grid_downsample_filter_node
+)
+
+################################################################################
+# Install
 install(DIRECTORY launch config
   DESTINATION share/${PROJECT_NAME}
 )
